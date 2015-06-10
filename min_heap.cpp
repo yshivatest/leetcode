@@ -3,15 +3,18 @@
 #include<queue>
 using namespace std;
 
-class Solution {
+class mycompare {
 public:
-    static bool mycompare(int x, int y)
-    {
+    bool operator()(const int x, const int y) {
         return x >= y;
     }
+};
+class Solution {
+public:
     void construct_minheap(vector<int>& nums)
     {
-        priority_queue<int, vector<int>, less<int>> x;
+        //priority_queue<int, vector<int>, greater<int>> x;
+        priority_queue<int, vector<int>, mycompare> x;
         x.emplace(1);
         x.emplace(2);
         x.emplace(3);
