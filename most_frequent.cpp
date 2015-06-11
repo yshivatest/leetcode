@@ -8,8 +8,8 @@ class Solution {
 public:
     class mycompare {
     public:
-        bool operator()(const pair<int,int>& lhs, const pair<int,int>& rhs) {
-            return lhs.first <= rhs.first;
+        bool operator()(const pair<int,int> lhs, const pair<int,int> rhs) {
+            return lhs.first >= rhs.first;
         }
     };
     vector<int> mostFrequent(vector<int>& nums, int k)
@@ -42,7 +42,7 @@ public:
 int main()
 {
     Solution s;
-    vector<int> x{3,1,2,3};
+    vector<int> x{3,1,2,3,2,3};
     vector<int> out = s.mostFrequent(x,1);
     for (int i = 0; i < out.size(); i++) {
         cout<<out[i]<<",";
