@@ -32,6 +32,19 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    ListNode* reverseList(ListNode* head) {
+        ListNode *old = NULL, *cur = head;
+        while(cur) {
+            ListNode *temp = cur->next;
+            cur->next = old;
+            old = cur;
+            cur = temp;
+        }
+        return old;
+    }
+};
 void print_list(ListNode *head)
 {
     for(;head; head = head->next) {
