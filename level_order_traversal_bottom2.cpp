@@ -48,9 +48,10 @@ public:
                 }
             }
             if (y.size())
-                t.insert(t.begin(), y);
+                t.push_back(y);
             swap(cur, next);
         }
+        reverse(t.begin(), t.end());
         return t;
     }
 };
